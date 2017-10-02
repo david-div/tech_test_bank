@@ -15,4 +15,10 @@ subject(:account) { Account.new(1000) }
   it 'should show the statement amount' do
     expect(account.statement_amount).to eq(1000)
   end
+
+  it 'should add to the total when credited' do
+    account.add_funds(2000)
+    expect(account.statement_amount).to eq(3000)
+  end
+
 end
