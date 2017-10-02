@@ -1,14 +1,17 @@
 # require './lib/account.rb'
 
 class Account
+  DEPOSIT_AMOUNT = 1000
+
   attr_reader :deposit
 
-  def initialize(deposit)
+  def initialize(deposit = DEPOSIT_AMOUNT)
     @deposit = deposit
     @total = deposit
+    @statement = []
   end
 
-  def statement_amount
+  def balance
     @total
   end
 
@@ -19,5 +22,11 @@ class Account
   def withdraw_funds(amount)
     @total -= amount
   end
+
+  def print_statement
+
+  end
+
+
 
 end
