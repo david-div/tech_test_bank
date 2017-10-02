@@ -17,11 +17,12 @@ class Account
 
   def add_funds(amount)
     @total += amount
-    @statement << { credit: amount, balance: balance }
+    @statement << { time: Time.now.strftime("%d/%m/%Y"), credit: amount, debit: 0, balance: balance }
   end
 
   def withdraw_funds(amount)
     @total -= amount
+    @statement << { time: Time.now.strftime("%d/%m/%Y"), credit: 0, debit: amount, balance: balance }
   end
 
   def print_statement
