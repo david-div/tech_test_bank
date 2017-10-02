@@ -21,4 +21,9 @@ subject(:account) { Account.new(1000) }
     expect(account.statement_amount).to eq(3000)
   end
 
+  it 'should deduct from the total when debited' do
+    account.withdraw_funds(500)
+    expect(account.statement_amount).to eq(500)
+  end
+
 end

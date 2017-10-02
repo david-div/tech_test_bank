@@ -16,4 +16,8 @@ class Account
     @total += amount
   end
 
+  def withdraw_funds(amount)
+    @total -= amount
+  end
+
 end
