@@ -17,6 +17,7 @@ class Account
 
   def add_funds(amount)
     @total += amount
+    @statement << { credit: amount, balance: balance }
   end
 
   def withdraw_funds(amount)
@@ -24,9 +25,9 @@ class Account
   end
 
   def print_statement
-
+    @statement.each do |trans|
+      puts trans
+    end
   end
-
-
 
 end

@@ -1,7 +1,6 @@
 require 'account'
 
 RSpec.describe 'Account' do
-
   subject(:account) { Account.new(1000) }
 
   context '#initialize' do
@@ -32,5 +31,11 @@ RSpec.describe 'Account' do
       expect(account.balance).to eq(500)
     end
   end
-  
+
+  context '#print_statement' do
+    it 'should show the credited amount and balance' do
+      account.add_funds(2000)
+      expect(account.print_statement).to include({credit: 2000, balance: 3000})
+    end
+  end
 end
