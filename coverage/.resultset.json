@@ -101,17 +101,46 @@
         1,
         null,
         1,
-        0,
-        0,
+        1,
+        2,
         null,
         null,
         null,
         null
       ],
       "/Users/main/makers/week10/tech_test/tech_test_bank/spec/statement_spec.rb": [
-        1
+        1,
+        null,
+        1,
+        null,
+        2,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        2,
+        null,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1507029476
+    "timestamp": 1507030354
   }
 }
