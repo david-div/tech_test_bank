@@ -1,6 +1,5 @@
 
 class Statement
-
   def header
     puts "date || credit || debit || balance"
   end
@@ -11,9 +10,8 @@ class Statement
     end
   end
 
-  def print_statement(statement)
+  def print(statement)
     header
     format_statement(statement)
   end
-
 end

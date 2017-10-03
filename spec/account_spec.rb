@@ -1,7 +1,8 @@
 require 'account'
 
-RSpec.describe 'Account' do
-  subject(:account) { Account.new(1000) }
+RSpec.describe Account do
+  subject(:account) { described_class.new(1000) }
+  # let(:statement) { double Statement.new }
 
   context '#initialize' do
     it 'should create a new account' do
@@ -36,23 +37,22 @@ RSpec.describe 'Account' do
     it 'should add to the statement' do
       account.add_funds(2000)
       hash = hash_including(credit: 2000, balance: 3000)
-      expect(account.statement).to include(hash)
+      expect(account.statement_history).to include(hash)
     end
 
     it 'should add the time on each transaction' do
       time = Time.now.strftime('%d/%m/%Y')
       account.withdraw_funds(500)
       hash = hash_including(date: time, debit: 500, balance: 500)
-      expect(account.statement).to include(hash)
+      expect(account.statement_history).to include(hash)
     end
   end
 
-  # context '#print_statement' do
-  #   it 'should print and format the statement' do
-  #     account.add_funds(2000)
-  #     time = Time.now.strftime('%d/%m/%Y')
-  #     string = "#{time} || 2000 || 0 || 3000\n"
-  #     expect { account.print_statement }.to output(string).to_stdout
-  #   end
-  # end
+  context '#print_statement' do
+    it 'should respond to print' do
+      statement = double(:statement)
+      expect(statement).to receive(:print)
+      account.print_statement(statement)
+    end
+  end
 end

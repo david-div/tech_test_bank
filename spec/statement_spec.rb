@@ -1,8 +1,7 @@
 require 'statement'
 
-RSpec.describe 'Statement' do
-
-  subject(:statement) { Statement.new }
+RSpec.describe Statement do
+  subject(:statement) { described_class.new }
 
   before(:all) do
     time = Time.now.strftime('%d/%m/%Y')
@@ -40,8 +39,7 @@ RSpec.describe 'Statement' do
   context '#print_statement' do
     it 'should print the header and statement' do
       header_string = "date || credit || debit || balance\n"
-      expect { statement.print_statement(@transactions) }.to output(header_string + @string).to_stdout
+      expect { statement.print(@transactions) }.to output(header_string + @string).to_stdout
     end
   end
-
 end
