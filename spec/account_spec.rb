@@ -1,7 +1,6 @@
 require 'account'
 
 RSpec.describe Account do
-
   subject(:account) { described_class.new(1000) }
 
   let(:time) { Time.now.strftime('%d/%m/%Y') }
@@ -11,7 +10,7 @@ RSpec.describe Account do
       expect(Account).to respond_to :new
     end
     it 'should allow you to credit an initial deposit' do
-      expect(account.deposit).to eq(1000)
+      expect(account.statement_history).to include(hash_including(balance: 1000))
     end
   end
 
@@ -56,12 +55,11 @@ RSpec.describe Account do
         { date: time, credit: 1000, balance: 1000 },
         { date: time, credit: 2000, balance: 3000 },
         { date: time, debit: 500, balance: 2500 },
-        { date: time, credit: 3000, balance: 5500 }]
+        { date: time, credit: 3000, balance: 5500 }
+      ]
       expect(account.statement_history).to eq(s_histry)
     end
-
   end
-
 
   context '#print_statement' do
     it 'should respond to print' do

@@ -9,23 +9,20 @@ RSpec.describe Statement do
       {
         date: time,
         credit: 1000,
-        debit: 0,
         balance: 1000
       },
       {
         date: time,
-        credit: 0,
         debit: 500,
         balance: 500
       }
     ]
-    @string = "#{time} || 1000 || 0 || 1000\n"\
-              "#{time} || 0 || 500 || 500\n"
+    @string = "#{time} ||  || 500 || 500\n"\
+              "#{time} || 1000 ||  || 1000\n"
   end
 
   context '#format_statement' do
     it 'should print and format the statement' do
-
       expect { statement.format_statement(@transactions) }.to output(@string).to_stdout
     end
   end

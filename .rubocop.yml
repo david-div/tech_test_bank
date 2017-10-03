@@ -938,7 +938,7 @@ Style/HashSyntax:
   PreferHashRocketsForNonAlnumEndingSymbols: false
 
 Style/IfUnlessModifier:
-  MaxLineLength: 80
+  MaxLineLength: 100
 
 Style/InverseMethods:
   Enabled: true
@@ -1299,7 +1299,7 @@ Style/TrivialAccessors:
     - to_sym
 
 Style/WhileUntilModifier:
-  MaxLineLength: 80
+  MaxLineLength: 100
 
 # `WordArray` enforces how array literals of word-like strings should be expressed.
 Style/WordArray:
@@ -1349,7 +1349,7 @@ Metrics/CyclomaticComplexity:
   Max: 6
 
 Metrics/LineLength:
-  Max: 80
+  Max: 100
   # To make it possible to copy or click on URIs in the code, we allow lines
   # containing a URI to be longer than Max.
   AllowHeredoc: true
