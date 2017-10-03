@@ -51,8 +51,6 @@
         null,
         null,
         null,
-        null,
-        1,
         1,
         1,
         1,
@@ -61,13 +59,11 @@
         2,
         null,
         null,
-        null,
-        null,
-        null,
         null
       ],
       "/Users/main/makers/week10/tech_test/tech_test_bank/lib/account.rb": [
         null,
+        1,
         null,
         1,
         1,
@@ -95,16 +91,27 @@
         null,
         null,
         1,
-        2,
-        2,
+        1,
+        0,
         null,
+        null
+      ],
+      "/Users/main/makers/week10/tech_test/tech_test_bank/lib/statement.rb": [
         null,
+        1,
+        null,
+        1,
+        0,
+        0,
         null,
         null,
         null,
         null
+      ],
+      "/Users/main/makers/week10/tech_test/tech_test_bank/spec/statement_spec.rb": [
+        1
       ]
     },
-    "timestamp": 1507027320
+    "timestamp": 1507028213
   }
 }

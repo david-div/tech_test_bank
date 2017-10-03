@@ -1,4 +1,5 @@
 # require './lib/account.rb'
+require_relative 'statement'
 
 class Account
   DEPOSIT_AMOUNT = 1000
@@ -17,20 +18,15 @@ class Account
 
   def add_funds(amount)
     @total += amount
-    @statement << { date: Time.now.strftime("%d/%m/%Y"), credit: amount, debit: 0, balance: balance }
+    @statement << { date: Time.now.strftime('%d/%m/%Y'), credit: amount, debit: 0, balance: balance }
   end
 
   def withdraw_funds(amount)
     @total -= amount
-    @statement << { date: Time.now.strftime("%d/%m/%Y"), credit: 0, debit: amount, balance: balance }
+    @statement << { date: Time.now.strftime('%d/%m/%Y'), credit: 0, debit: amount, balance: balance }
   end
 
-  def print_statement
-    @statement.each do |trans|
-      puts "#{trans[:date]} || #{trans[:credit]} || #{trans[:debit]} || #{trans[:balance]}"
-      # "#{trans[date]} || #{credit} || #{debit} || #{balance}}"
-      # puts trans
-    end
+  def print_statement(statement = Statement.new)
+    statement.print_statement(@statement)
   end
-
 end
