@@ -16,6 +16,4 @@ class Statement
     format_statement(statement)
   end
 
-
-
 end

@@ -5,23 +5,23 @@ RSpec.describe 'Statement' do
   subject(:statement) { Statement.new }
 
   before(:all) do
-    @time = Time.now.strftime('%d/%m/%Y')
+    time = Time.now.strftime('%d/%m/%Y')
     @transactions = [
       {
-        date: @time,
+        date: time,
         credit: 1000,
         debit: 0,
         balance: 1000
       },
       {
-        date: @time,
+        date: time,
         credit: 0,
         debit: 500,
         balance: 500
       }
     ]
-    @string = "#{@time} || 1000 || 0 || 1000\n"\
-              "#{@time} || 0 || 500 || 500\n"
+    @string = "#{time} || 1000 || 0 || 1000\n"\
+              "#{time} || 0 || 500 || 500\n"
   end
 
   context '#format_statement' do
