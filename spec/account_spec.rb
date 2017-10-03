@@ -32,18 +32,18 @@ RSpec.describe 'Account' do
     end
   end
 
-  context '#print_statement' do
+  context '#statement' do
     it 'should show the credited amount and balance' do
       account.add_funds(2000)
       hash = hash_including({credit: 2000, balance: 3000})
-      expect(account.print_statement).to include(hash)
+      expect(account.statement).to include(hash)
     end
 
     it 'should show the time on each transaction' do
       time = Time.now.strftime("%d/%m/%Y")
       account.withdraw_funds(500)
-      hash = hash_including({time: time, debit: 500, balance: 500})
-      expect(account.print_statement).to include(hash)
+      hash = hash_including({date: time, debit: 500, balance: 500})
+      expect(account.statement).to include(hash)
     end
   end
 
