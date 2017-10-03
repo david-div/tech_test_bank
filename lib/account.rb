@@ -27,8 +27,9 @@ class Account
 
   def print_statement
     @statement.each do |trans|
-      # "#{"date || credit || debit || balance"}"
-      puts trans
+      puts "#{trans[:date]} || #{trans[:credit]} || #{trans[:debit]} || #{trans[:balance]}"
+      # "#{trans[date]} || #{credit} || #{debit} || #{balance}}"
+      # puts trans
     end
   end
 

@@ -45,6 +45,19 @@ RSpec.describe 'Account' do
       hash = hash_including({date: time, debit: 500, balance: 500})
       expect(account.statement).to include(hash)
     end
+
+  end
+
+    context '#print_statement' do
+      it 'should print and format the statement' do
+        account.add_funds(2000)
+        time = Time.now.strftime("%d/%m/%Y")
+        string = "#{time} || 2000 || 0 || 3000\n"
+        p account.print_statement
+        expect { account.print_statement }.to output(string).to_stdout
+
+    end
+
   end
 
 end
