@@ -10,6 +10,7 @@ class Account
     @deposit = deposit
     @total = deposit
     @statement = []
+    @statement << { date: Time.now.strftime('%d/%m/%Y'), credit: deposit, debit: 0, balance: balance  }
   end
 
   def balance

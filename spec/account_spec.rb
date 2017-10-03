@@ -47,12 +47,12 @@ RSpec.describe 'Account' do
     end
   end
 
-  context '#print_statement' do
-    it 'should print and format the statement' do
-      account.add_funds(2000)
-      time = Time.now.strftime('%d/%m/%Y')
-      string = "#{time} || 2000 || 0 || 3000\n"
-      expect { account.print_statement }.to output(string).to_stdout
-    end
-  end
+  # context '#print_statement' do
+  #   it 'should print and format the statement' do
+  #     account.add_funds(2000)
+  #     time = Time.now.strftime('%d/%m/%Y')
+  #     string = "#{time} || 2000 || 0 || 3000\n"
+  #     expect { account.print_statement }.to output(string).to_stdout
+  #   end
+  # end
 end
