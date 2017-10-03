@@ -5,10 +5,17 @@ class Statement
     puts "date || credit || debit || balance"
   end
 
-  def print_statement(statement)
+  def format_statement(statement)
     statement.each do |trans|
       puts "#{trans[:date]} || #{trans[:credit]} || #{trans[:debit]} || #{trans[:balance]}"
     end
   end
+
+  def print_statement(statement)
+    header
+    format_statement(statement)
+  end
+
+
 
 end

@@ -31,3 +31,5 @@ class Account
     statement.print_statement(@statement)
   end
 end
+
+# add an initial depost method, with self.deposit on init
