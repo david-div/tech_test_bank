@@ -1,4 +1,4 @@
-## Makers Bank tech test!
+## Makers Bank tech test
 
 `Practice tech test, simulating simple banking transactions:
   Deposits, withdrawal.

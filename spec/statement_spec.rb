@@ -25,6 +25,7 @@ RSpec.describe Statement do
 
   context '#format_statement' do
     it 'should print and format the statement' do
+
       expect { statement.format_statement(@transactions) }.to output(@string).to_stdout
     end
   end

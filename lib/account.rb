@@ -6,7 +6,7 @@ class Account
 
   attr_reader :deposit, :statement_history, :balance
 
-  def initialize(deposit = DEPOSIT_AMOUNT, _print)
+  def initialize(deposit = DEPOSIT_AMOUNT)
     @deposit = deposit
     @statement_history = []
     @balance = 0
@@ -15,12 +15,14 @@ class Account
 
   def add_funds(amount)
     @balance += amount
-    @statement_history << { date: Time.now.strftime('%d/%m/%Y'), credit: amount, debit: 0, balance: balance }
+
+    @statement_history << { date: Time.now.strftime('%d/%m/%Y'), credit: amount, balance: balance }
   end
 
   def withdraw_funds(amount)
     @balance -= amount
-    @statement_history << { date: Time.now.strftime('%d/%m/%Y'), credit: 0, debit: amount, balance: balance }
+
+    @statement_history << { date: Time.now.strftime('%d/%m/%Y'), debit: amount, balance: balance }
   end
 
   def print_statement(statement = Statement.new)
@@ -31,8 +33,11 @@ class Account
 
   def initial_deposit
     @balance += deposit
-    @statement_history << { date: Time.now.strftime('%d/%m/%Y'), credit: deposit, debit: 0, balance: balance }
+    @statement_history << { date: Time.now.strftime('%d/%m/%Y'), credit: deposit, balance: balance }
   end
 end
 
-# add an initial depost method, with self.deposit on init
+account = Account.new
+account.print_statement
+account.add_funds(2000)
+account.print_statement
