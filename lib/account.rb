@@ -27,11 +27,6 @@ class Account
   end
 
   private
-  # 
-  # def initial_deposit(amount)
-  #   @balance += amount
-  #   @statement_history << credit_hash
-  # end
 
   def credit_hash(amount)
     { date: date, credit: amount, balance: balance }
