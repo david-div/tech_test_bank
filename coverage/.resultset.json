@@ -75,7 +75,6 @@
         null
       ],
       "/Users/main/makers/week10/tech_test/tech_test_bank/lib/account.rb": [
-        null,
         1,
         null,
         null,
@@ -107,8 +106,12 @@
         1,
         null,
         1,
-        8,
-        8,
+        0,
+        0,
+        null,
+        null,
+        1,
+        12,
         null,
         null,
         1,
@@ -182,6 +185,6 @@
         null
       ]
     },
-    "timestamp": 1507071059
+    "timestamp": 1507127799
   }
 }

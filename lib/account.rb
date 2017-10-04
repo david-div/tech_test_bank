@@ -8,13 +8,13 @@ class Account
 
   def initialize(deposit = DEPOSIT_AMOUNT)
     @statement_history = []
-    @balance = 0
-    initial_deposit(deposit)
+    @balance = deposit
+    @statement_history << credit_hash(deposit)
   end
 
   def add_funds(amount)
     @balance += amount
-    @statement_history << { date: date, credit: amount, balance: balance }
+    @statement_history << credit_hash(amount)
   end
 
   def withdraw_funds(amount)
@@ -27,10 +27,14 @@ class Account
   end
 
   private
+  # 
+  # def initial_deposit(amount)
+  #   @balance += amount
+  #   @statement_history << credit_hash
+  # end
 
-  def initial_deposit(amount)
-    @balance += amount
-    @statement_history << { date: date, credit: amount, balance: balance }
+  def credit_hash(amount)
+    { date: date, credit: amount, balance: balance }
   end
 
   def date
