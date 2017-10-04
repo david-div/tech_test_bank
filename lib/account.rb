@@ -1,4 +1,3 @@
-# require './lib/account.rb'
 require_relative 'statement'
 
 # lib/account
@@ -8,10 +7,8 @@ class Account
   attr_reader :statement_history, :balance, :date
 
   def initialize(deposit = DEPOSIT_AMOUNT)
-    @deposit = deposit
     @statement_history = []
     @balance = 0
-    @date = Time.now.strftime('%d/%m/%Y')
     initial_deposit(deposit)
   end
 
@@ -35,4 +32,9 @@ class Account
     @balance += amount
     @statement_history << { date: date, credit: amount, balance: balance }
   end
+
+  def date
+    Time.now.strftime('%d/%m/%Y')
+  end
+
 end
