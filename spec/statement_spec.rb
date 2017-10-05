@@ -17,8 +17,9 @@ RSpec.describe Statement do
         balance: 500
       }
     ]
-    @string = "#{time} ||  || 500 || 500\n"\
-              "#{time} || 1000 ||  || 1000\n"
+    @string = "#{time} || 1000 ||  || 1000\n"\
+              "#{time} ||  || 500 || 500\n"
+
   end
 
   context '#format_statement' do

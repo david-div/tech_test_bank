@@ -76,6 +76,7 @@
       ],
       "/Users/main/makers/week10/tech_test/tech_test_bank/lib/account.rb": [
         1,
+        1,
         null,
         null,
         1,
@@ -104,11 +105,6 @@
         null,
         null,
         1,
-        null,
-        1,
-        0,
-        0,
-        null,
         null,
         1,
         12,
@@ -116,6 +112,15 @@
         null,
         1,
         15,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null
@@ -138,6 +143,9 @@
         1,
         null,
         null
+      ],
+      "/Users/main/makers/week10/tech_test/tech_test_bank/lib/transactions.rb": [
+
       ],
       "/Users/main/makers/week10/tech_test/tech_test_bank/spec/statement_spec.rb": [
         1,
@@ -163,6 +171,7 @@
         null,
         null,
         null,
+        null,
         1,
         1,
         2,
@@ -185,6 +194,6 @@
         null
       ]
     },
-    "timestamp": 1507127799
+    "timestamp": 1507203142
   }
 }

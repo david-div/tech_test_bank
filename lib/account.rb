@@ -1,4 +1,5 @@
 require_relative 'statement'
+require_relative 'transactions'
 
 # lib/account
 class Account
@@ -9,7 +10,7 @@ class Account
   def initialize(deposit = DEPOSIT_AMOUNT)
     @statement_history = []
     @balance = deposit
-    @statement_history << credit_hash(deposit)
+    @statement_history.unshift(credit_hash(deposit))
   end
 
   def add_funds(amount)
@@ -37,3 +38,12 @@ class Account
   end
 
 end
+
+
+
+
+# account currently has 3 responsibilities:
+  # balance
+  # transaction history
+  # print_statement (which )
+# 

@@ -5,7 +5,7 @@ class Statement
   end
 
   def format_statement(statement)
-    statement.reverse.each do |trans|
+    statement.each do |trans|
       puts "#{trans[:date]} || #{trans[:credit]} || #{trans[:debit]} || #{trans[:balance]}"
     end
   end
