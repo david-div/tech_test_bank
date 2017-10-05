@@ -6,33 +6,24 @@ class Account
 
   attr_reader :statement_history, :balance, :date
 
-  def initialize
+  def initialize(transaction = Transaction.new)
     @statement_history = []
     @balance = 0
+    @transaction = transaction
   end
 
   def add_funds(amount)
     @balance += amount
-    @statement_history.unshift(credit_hash(amount))
+    @statement_history.unshift(@transaction.add_funds(amount, balance))
   end
 
   def withdraw_funds(amount)
     @balance -= amount
-    @statement_history.unshift({ date: date, debit: amount, balance: balance })
+    @statement_history.unshift(@transaction.withdraw_funds(amount, balance))
   end
 
   def print_statement(statement = Statement.new)
     statement.print(@statement_history)
-  end
-
-  private
-
-  def credit_hash(amount)
-    { date: date, credit: amount, balance: balance }
-  end
-
-  def date
-    Time.now.strftime('%d/%m/%Y')
   end
 
 end

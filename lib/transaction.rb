@@ -4,7 +4,7 @@ class Transaction
     { date: date, credit: amount, balance: balance }
   end
 
-  def withdraw_funds
+  def withdraw_funds(amount, balance)
     { date: date, debit: amount, balance: balance }
   end
 

@@ -4,13 +4,11 @@ RSpec.describe Account do
 
     subject(:account) { described_class.new }
 
-
     before(:each) do
       account.add_funds(1000)
     end
 
     let(:time) { Time.now.strftime('%d/%m/%Y') }
-
 
   context '#initialize' do
     it 'should create a new account' do
