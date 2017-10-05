@@ -1,26 +1,24 @@
 require_relative 'statement'
-require_relative 'transactions'
+require_relative 'transaction'
 
 # lib/account
 class Account
-  DEPOSIT_AMOUNT = 1000
 
   attr_reader :statement_history, :balance, :date
 
-  def initialize(deposit = DEPOSIT_AMOUNT)
+  def initialize
     @statement_history = []
-    @balance = deposit
-    @statement_history.unshift(credit_hash(deposit))
+    @balance = 0
   end
 
   def add_funds(amount)
     @balance += amount
-    @statement_history << credit_hash(amount)
+    @statement_history.unshift(credit_hash(amount))
   end
 
   def withdraw_funds(amount)
     @balance -= amount
-    @statement_history << { date: date, debit: amount, balance: balance }
+    @statement_history.unshift({ date: date, debit: amount, balance: balance })
   end
 
   def print_statement(statement = Statement.new)
