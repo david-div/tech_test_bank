@@ -1,9 +1,9 @@
-## Makers Bank tech test
+## Makers Bank tech test
 
 Practice tech test, simulating simple banking transactions:
-  Deposits, withdrawal.
-  Account statement (date, amount, balance) printing.
-  Data kept in memory
+  - Deposits, withdrawals.
+  - Account statement (date, amount, balance) printing.
+  - Data kept in memory
 
 To be run in IRB
 
