@@ -27,12 +27,3 @@ class Account
   end
 
 end
-
-
-
-
-# account currently has 3 responsibilities:
-  # balance
-  # transaction history
-  # print_statement (which )
-# 
