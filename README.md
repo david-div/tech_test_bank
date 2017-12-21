@@ -14,7 +14,18 @@ To be run in irb
 
 ## Usage
 
-`run in irb, require './lib/account.rb'`
+`run in irb`  
+`require './lib/account.rb'`
+
+`account = Account.new`  
+
+The following options are then available:
+ - add_funds(amount)
+ - withdraw_funds(amount)
+ - print_statement
+ 
+
+ All amounts are positive
 
 
 ## Running tests
